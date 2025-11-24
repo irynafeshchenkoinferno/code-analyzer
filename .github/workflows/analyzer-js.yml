@@ -1,8 +1,14 @@
 name: Analyze Code with AI Agent
 
 on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'master'
   pull_request:
-    branches: [master, 'feature/**']
+    branches:
+      - 'feature/**'
+      - 'master'
 
 jobs:
   analyze:
