@@ -1,0 +1,44 @@
+name: Run gRPC Project Tests
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'master'
+  pull_request:
+    branches:
+      - 'feature/**'
+      - 'master'
+
+jobs:
+  grpc-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+      # Checkout repository
+      - uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Move into gRPC project folder
+      - name: Install dependencies
+        working-directory: grpc
+        run: npm ci
+
+      # Build the gRPC project
+      - name: Build
+        working-directory: grpc
+        run: npm run build
+
+      # Run tests
+      - name: Run tests
+        working-directory: grpc
+        run: npm test
