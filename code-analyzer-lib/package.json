@@ -1,0 +1,24 @@
+{
+  "name": "code-analyzer-lib",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && cpy 'src/proto/**/*.proto' dist/proto --parents",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.14.1",
+    "@grpc/proto-loader": "^0.8.0"
+  }
+}
