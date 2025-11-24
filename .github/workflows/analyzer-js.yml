@@ -22,11 +22,14 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
+        working-directory: code-analyzer-lib
         run: npm ci
 
       - name: Build
+        working-directory: code-analyzer-lib
         run: npm run build
 
       - name: Run AI Analysis
+        working-directory: code-analyzer-lib
         run: |
           node dist/client.js
