@@ -26,7 +26,7 @@ export class GrpcServer {
     this.validator = new PromptValidation(this.logger);
     this.analysisService = new AnalysisService(this.logger, this.validator);
 
-    const protoPath = path.resolve(__dirname, "proto/analyzer.proto");
+    const protoPath = path.resolve(__dirname, "../proto/analyzer.proto");
     const packageDef = loadSync(protoPath, {
       longs: String,
       enums: String,
