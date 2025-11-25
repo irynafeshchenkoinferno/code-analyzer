@@ -9,7 +9,7 @@ import {
 import { loadSync } from "@grpc/proto-loader";
 import { analyzeCode } from "./analyzer";
 
-const PROTO_PATH = path.resolve(__dirname, "../src/proto/analyzer.proto");
+const PROTO_PATH = path.join(__dirname, "proto/analyzer.proto");
 const packageDef = loadSync(PROTO_PATH);
 const grpcObj = loadPackageDefinition(packageDef) as any;
 const aiPackage = grpcObj.ai;
