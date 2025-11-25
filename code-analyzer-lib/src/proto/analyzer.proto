@@ -5,7 +5,7 @@ package ai;
 service AiAgentService {
   rpc GetResponse(AiRequest) returns (AiResponse);
 
-  rpc StreamResponse(AiRequest) returns (stream AiResponse);
+  rpc StreamAnalyze (stream FileData) returns (AnalyzeProjectResponse);
 }
 
 message AiRequest {
@@ -14,4 +14,15 @@ message AiRequest {
 
 message AiResponse {
   string text = 1;
+}
+
+message FileData {
+  string path = 1;
+  string name = 1;
+  string content = 2;
+}
+
+message AnalyzeProjectResponse {
+  string summary = 1;
+  int32 fileCount = 2;
 }
