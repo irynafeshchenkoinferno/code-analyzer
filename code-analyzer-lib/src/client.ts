@@ -16,7 +16,7 @@ const client = new aiPackage.AiAgentService(
 client.GetResponse(
   { prompt: "function add(a,b){return a+b;}" },
   (err: any, response: any) => {
-    console.log("Unary response:", response.text);
+    console.log("Unary response:", response);
   }
 );
 
