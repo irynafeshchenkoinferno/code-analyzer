@@ -33,7 +33,7 @@ jobs:
       - name: Start gRPC server
         working-directory: code-analyzer-lib
         run: |
-          node dist/server.js &
+          node dist/index.js &
           echo "Waiting for gRPC server to start..."
           sleep 3
 
