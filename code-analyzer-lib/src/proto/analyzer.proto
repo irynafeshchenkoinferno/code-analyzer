@@ -18,8 +18,8 @@ message AiResponse {
 
 message FileData {
   string path = 1;
-  string name = 1;
-  string content = 2;
+  string name = 2;
+  string content = 3;
 }
 
 message AnalyzeProjectResponse {
