@@ -16,13 +16,13 @@ const client = new aiPackage.AiAgentService(
 client.GetResponse(
   { prompt: "function add(a,b){return a+b;}" },
   (err: any, response: any) => {
-    console.log("Unary response:", response);
+    console.log("Unary response:", response.text);
   }
 );
 
-// Streaming call
-const stream = client.StreamResponse({
-  prompt: "function add(a,b){return a+b;}",
-});
-stream.on("data", (chunk: any) => console.log("Stream chunk:", chunk.text));
-stream.on("end", () => console.log("Stream ended"));
+// // Streaming call
+// const stream = client.StreamResponse({
+//   prompt: "function add(a,b){return a+b;}",
+// });
+// stream.on("data", (chunk: any) => console.log("Stream chunk:", chunk.text));
+// stream.on("end", () => console.log("Stream ended"));
